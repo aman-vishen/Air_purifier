@@ -411,7 +411,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">CO2</p>
-                    <h5 class="font-weight-bolder mb-0">
+                    <h5 class="font-weight-bolder mb-0" id="co2">
                       50ppm
                       <span class="text-danger text-sm font-weight-bolder">-2%</span>
                     </h5>
@@ -1278,7 +1278,7 @@
                 var air_quality1 = snapshot.val().PM_1;
                 var air_quality2= snapshot.val().PM_25;
                 var air_quality3 = snapshot.val().PM_10;
-                // var humidity = snapshot.val().Humidity;
+                var co2 = snapshot.val().CO2;
                 // var ldr = snapshot.val().Ldr;
                 // var lpg = snapshot.val().Lpg;
                 // var pressure = snapshot.val().Pressure;
@@ -1289,7 +1289,7 @@
                 // document.getElementById('air').innerHTML = air_quality1+ " PPM";
                 document.getElementById('pm25').innerHTML = air_quality2+ " PPM";
                 document.getElementById('pm10').innerHTML = air_quality3+ " PPM";
-                // document.getElementById('altitude').innerHTML = altitude+ " M";
+                document.getElementById('co2').innerHTML = co2+ " PPM";
                 // document.getElementById('cng').innerHTML = cng+ " PPM";
                 // document.getElementById('humidity').innerHTML = humidity+ " %";
                 // document.getElementById('ldr').innerHTML = ldr+ " LX";
