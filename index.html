@@ -432,8 +432,8 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Co and So2</p>
-                    <h5 class="font-weight-bolder mb-0">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Gas Value</p>
+                    <h5 class="font-weight-bolder mb-0 " id="gas_val">
                       10ppm
                       <span class="text-success text-sm font-weight-bolder">+5%</span>
                     </h5>
@@ -616,7 +616,7 @@
               <h6>Air Quality</h6>
               <p class="text-sm">
                 <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold">4% more</span> in 2021
+                <span class="font-weight-bold">4% more</span> in July
               </p>
             </div>
             <div class="card-body p-3">
@@ -1279,7 +1279,7 @@
                 var air_quality2= snapshot.val().PM_25;
                 var air_quality3 = snapshot.val().PM_10;
                 var co2 = snapshot.val().CO2;
-                // var ldr = snapshot.val().Ldr;
+                var gas_val = snapshot.val().Gas_Value;
                 // var lpg = snapshot.val().Lpg;
                 // var pressure = snapshot.val().Pressure;
                 // var rain = snapshot.val().Rain_Value;
@@ -1290,7 +1290,7 @@
                 document.getElementById('pm25').innerHTML = air_quality2+ " PPM";
                 document.getElementById('pm10').innerHTML = air_quality3+ " PPM";
                 document.getElementById('co2').innerHTML = co2+ " PPM";
-                // document.getElementById('cng').innerHTML = cng+ " PPM";
+                document.getElementById('gas_val').innerHTML = gas_val;
                 // document.getElementById('humidity').innerHTML = humidity+ " %";
                 // document.getElementById('ldr').innerHTML = ldr+ " LX";
                 // document.getElementById('lpg').innerHTML = lpg+ " PPM";
