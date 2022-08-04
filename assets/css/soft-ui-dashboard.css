@@ -22681,3 +22681,24 @@ pre[class*=language-] {
   }
 }
 /*# sourceMappingURL=soft-ui-dashboard.css.map */
+
+
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-img{
+  width: 100%;
+  height: 500px;
+}

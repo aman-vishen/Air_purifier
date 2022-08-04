@@ -356,6 +356,43 @@
       </div>
     </nav>
     <!-- End Navbar -->
+
+    <section id="headeerr">
+      <div style="text-align: center; padding-top: 20px; padding-bottom: 40px;">
+        <img src="assets/img/tp12.jpg" style="width: 100%; height: 200px;">
+        <!-- <h1>
+          Air Quality Dashboard 
+        </h1> -->
+      </div>
+
+    </section>
+
+    <section style="text-align: center;">
+      <!-- <div class="card bg-dark text-white"> 
+      
+        <img src="assets/img/top_div.jpeg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Average Air Quality</h5>
+          <p class="card-text">Avg PM 2.5.</p>
+          <h4 class="card-text" id="pm25">
+            150ppm
+            <span class="text-success text-sm font-weight-bolder">+55%</span>
+          </h4>
+          <p class="card-text">Last updated 3 mins ago</p>
+
+          <p class="card-text">Avg PM 2.5.</p>
+          <h4 class="card-text" id="pm25">
+            150ppm
+            <span class="text-success text-sm font-weight-bolder">+55%</span>
+          </h4>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div> 
+      </div> -->
+    
+      <h3>
+        Average Value of All the Air Purifier Profile
+      </h3>
+    </section>
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -451,6 +488,79 @@
             </div>
           </div>
         </div>
+
+        <div class="col-xl-3 col-sm-6"  style="padding-top: 20px;">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Temperature</p>
+                    <h5 class="font-weight-bolder mb-0 " id="temp">
+                      31°C
+                      <span class="text-success text-sm font-weight-bolder">+5%</span>
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <!-- <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md"> -->
+                    <img src="/assets/img/temp.png" height="45px;" width="55px;">
+                    <!-- <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i> -->
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-xl-3 col-sm-6" style="padding-top: 20px;">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">humidity</p>
+                    <h5 class="font-weight-bolder mb-0 " id="humidity">
+                      60%
+                      <span class="text-success text-sm font-weight-bolder">+5%</span>
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <!-- <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md"> -->
+                    <img src="/assets/img/humid.png" height="45px;" width="55px;">
+                    <!-- <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i> -->
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6" style="padding-top: 20px;">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Overall Status</p>
+                    <h5 class="font-weight-bolder mb-0 " id="status">
+                      Good
+                      <!-- <span class="text-success text-sm font-weight-bolder">+5%</span> -->
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <!-- <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md"> -->
+                    <img src="/assets/img/status.png" height="45px;" width="55px;">
+                    <!-- <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i> -->
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row mt-4">
         <!-- <div class="col-lg-7 mb-lg-0 mb-4">
@@ -505,8 +615,8 @@
                   <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
                 </div>
               </div>
-              <h6 class="ms-2 mt-4 mb-0"> Current User </h6>
-              <p class="text-sm ms-2"> (<span class="font-weight-bolder">+2% PPm</span>) than last week </p>
+              <h6 class="ms-2 mt-4 mb-0"> Current Users </h6>
+              <p class="text-sm ms-2">Air Quality of Rooms</p>
               <div class="container border-radius-lg">
                 <div class="row">
                   <div class="col-3 py-3 ps-0">
@@ -526,9 +636,9 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Users</p>
+                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 1</p>
                     </div>
-                    <h4 class="font-weight-bolder">5</h4>
+                    <h4 class="font-weight-bolder">144ppm</h4>
                     <div class="progress w-75">
                       <!-- <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div> -->
                     </div>
@@ -552,9 +662,9 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 2 Avg</p>
+                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 2</p>
                     </div>
-                    <h4 class="font-weight-bolder">150</h4>
+                    <h4 class="font-weight-bolder">150ppm</h4>
                     <div class="progress w-75">
                       <!-- <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div> -->
                     </div>
@@ -576,9 +686,9 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 3 Avg</p>
+                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 3</p>
                     </div>
-                    <h4 class="font-weight-bolder">152</h4>
+                    <h4 class="font-weight-bolder">152ppm</h4>
                     <div class="progress w-75">
                       <!-- <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div> -->
                     </div>
@@ -601,9 +711,9 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 4 Avg</p>
+                      <p class="text-xs mt-1 mb-0 font-weight-bold">Room 4</p>
                     </div>
-                    <h4 class="font-weight-bolder">145</h4>
+                    <h4 class="font-weight-bolder">145ppm</h4>
                     <div class="progress w-75">
                       <!-- <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
                     </div>
@@ -616,10 +726,10 @@
         <div class="col-lg-7">
           <div class="card z-index-2">
             <div class="card-header pb-0">
-              <h6>Air Quality</h6>
+              <h6>Average Air Quality</h6>
               <p class="text-sm">
                 <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold">4% more</span> in July
+                <span class="font-weight-bold">4% more</span> in August
               </p>
             </div>
             <div class="card-body p-3">
@@ -1087,7 +1197,7 @@
     new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        labels: ["Room 1", "Room2", "Room3", "Room4", "Room5"],
         datasets: [{
           label: "Sales",
           tension: 0.4,
@@ -1095,7 +1205,7 @@
           borderRadius: 4,
           borderSkipped: false,
           backgroundColor: "#fff",
-          data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+          data: [150, 170, 155, 140, 170],
           maxBarThickness: 6
         }, ],
       },
@@ -1322,6 +1432,8 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
 </html>
