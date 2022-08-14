@@ -38,6 +38,7 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
+  <!-- <div id="particles-js"> -->
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -69,26 +70,7 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link  " href="index.html">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>office</title>
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                    <g transform="translate(1716.000000, 291.000000)">
-                      <g id="office" transform="translate(153.000000, 2.000000)">
-                        <path class="color-background opacity-6" d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"></path>
-                        <path class="color-background" d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z"></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <span class="nav-link-text ms-1">Select Area Type</span>
-          </a>
-        </li>
+        /
         <!-- <li class="nav-item">
           <a class="nav-link  " href="../pages/billing.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -175,7 +157,7 @@
             <span class="nav-link-text ms-1">Profile</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link  " href="pages/sign-in.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -218,7 +200,7 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
     <!-- <div class="sidenav-footer mx-3 ">
       <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
         <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
@@ -564,12 +546,186 @@
             </div>
           </div>
         </div>
+        <div class="col-xl-3 col-sm-6" style="padding-top: 35px;">
+          
+                    <!-- <p class="text-sm mb-0 text-capitalize font-weight-bold">Overall Status</p> -->
+                    <!-- <h5 class="font-weight-bolder mb-0 " id="status"> -->
+                      <!-- Good -->
+                    
+                
+         
+                 <div style="text-align: center;">
+                    <!-- <img src="/assets/img/status.png" height="45px;" width="55px;"> -->
+                    <button type="button" class="btn bg-gradient-danger w-50 mt-2 mb-0" id="emer">Emergency Stop</button>
+                  
+                  </div>
+              
       </div>
+
+      
     <!-- </canvas>
     </div> -->
     
     
   </div>
+  <section id="room-card" style="padding-top: 60px; text-align: center; align-items: center; padding-left: 20px;">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/curved-images/curved1.jpg')">
+          <div class="card-body z-index-2 py-3">
+            <h2 class="text-white">Profile 1</h2>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span> 255pmm</span>
+            </p>
+            <span id="dots"></span><span id="more"> 
+            <p class="text-white">
+              PM 10 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction()" id="myBtn">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-dark border-radius-lg"></div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
+          <div class="card-body z-index-2 py-3">
+            <h2 class="text-white">Profile 2</h2>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span> 255pmm</span>
+            </p>
+            <span id="dots"></span><span id="more"> 
+            <p class="text-white">
+              PM 10 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction()" id="myBtn">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-primary border-radius-lg"></div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
+          <div class="card-body z-index-2 py-3">
+            <h2 class="text-white">Profile 3</h2>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span> 255pmm</span>
+            </p>
+            <span id="dots"></span><span id="more"> 
+            <p class="text-white">
+              PM 10 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction()" id="myBtn">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-primary border-radius-lg"></div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
+          <div class="card-body z-index-2 py-3">
+            <h2 class="text-white">Profile 4</h2>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span> 255pmm</span>
+            </p>
+            <span id="dots"></span><span id="more"> 
+            <p class="text-white">
+              PM 10 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction()" id="myBtn">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-primary border-radius-lg"></div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
+          <div class="card-body z-index-2 py-3">
+            <h2 class="text-white">Profile 5</h2>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span> 255pmm</span>
+            </p>
+            <span id="dots"></span><span id="more"> 
+            <p class="text-white">
+              PM 10 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction()" id="myBtn">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-primary border-radius-lg"></div>
+        </div>
+      </div>
+      
+      <!-- <div class="col-md-3">
+        <a href="javascript:;">
+          <div class="card card-background move-on-hover">
+            <div class="full-background" style="background-image: url('assets/img/darken_bg.png')"></div>
+            <div class="card-body py-9">
+              <h4 class="text-white">Search and Discovery</h4>
+              <p>Website visitors today demand a frictionless user expericence — especially when using search. Because of the hight standards.</p>
+            </div>
+          </div>
+        </a>
+      </div> -->
+      
+    </div>
+    
+  </section>
 
       <div class="container-fluid py-4">
       <div class="row" >
@@ -1196,12 +1352,34 @@
       </div>
     </div>
   </div>
+ <!-- </div> -->
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!-- <script src="/particles.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function() {
+      stats.begin();
+      stats.end();
+      if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+      }
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  </script> -->
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -1268,7 +1446,21 @@
         },
       },
     });
-
+    function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+    
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+    }
 
     var ctx2 = document.getElementById("chart-line").getContext("2d");
 
@@ -1404,7 +1596,8 @@
                 var air_quality3 = snapshot.val().PM_10;
                 var co2 = snapshot.val().CO2;
                 var gas_val = snapshot.val().Gas_Value;
-                // var lpg = snapshot.val().Lpg;
+                var emer = snapshot.val().emer;
+                console.log("emer-------",emer)
                 // var pressure = snapshot.val().Pressure;
                 // var rain = snapshot.val().Rain_Value;
                 // var smoke = snapshot.val().Smoke;
@@ -1422,13 +1615,27 @@
                 // document.getElementById('rain').innerHTML = rain+ " MM";
                 // document.getElementById('smoke').innerHTML = smoke+ " PPM";
                 // document.getElementById('temp').innerHTML = temp+ " °C";
+                document.getElementById("emer").onclick = emerfunc(emer);
                 
                 
 
             })
 
         }
+        function emerfunc(emer) {
+        // var Emergency = document.getElementById("emer");
+        // if (emer=="0"){
+          firebase.database().ref().child("emer").set("1");
+        // }
+        // else{
+          // firebase.database().ref().child("emer").set("0");
+        // }
+        // if (emer=="1"){
+        //   firebase.database().ref().child("emer").set("0");
+        // }
+        }
         getAllDataOnce();
+        
     </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
