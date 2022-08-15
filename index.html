@@ -43,7 +43,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="index.html" target="_blank">
-        <img src="logo.png" class="navbar-brand-img h-100" alt="main_logo" width="250px" height="200px" style="padding-bottom: 30px;">
+        <img src="logo_new.PNG" class="navbar-brand-img h-100" alt="main_logo" width="250px" height="300px" style="padding-bottom: 30px;">
         <!-- <span class="ms-2 font-weight-bold"  style="font-size: 20px;">Ballice Air Purifier</span> -->
       </a>
     </div>
@@ -137,7 +137,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="">
+          <a class="nav-link  " href="pages/profile.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -387,7 +387,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">PM 2.5</p>
-                    <h5 class="font-weight-bolder mb-0" id="pm25">
+                    <h5 class="font-weight-bolder mb-0" id="avg_val_pm25">
                       150ppm
                       <span class="text-success text-sm font-weight-bolder">+55%</span>
                     </h5>
@@ -411,7 +411,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">PM 10</p>
-                    <h5 class="font-weight-bolder mb-0" id="pm10">
+                    <h5 class="font-weight-bolder mb-0" id="avg_val_pm10">
                       140ppm
                       <span class="text-success text-sm font-weight-bolder">+3%</span>
                     </h5>
@@ -434,7 +434,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">CO2</p>
-                    <h5 class="font-weight-bolder mb-0" id="co2">
+                    <h5 class="font-weight-bolder mb-0" id="avg_val_co2">
                       50ppm
                       <span class="text-danger text-sm font-weight-bolder">-2%</span>
                     </h5>
@@ -457,7 +457,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Gas Value</p>
-                    <h5 class="font-weight-bolder mb-0 " id="gas_val">
+                    <h5 class="font-weight-bolder mb-0 " id="avg_val_gas">
                       10ppm
                       <span class="text-success text-sm font-weight-bolder">+5%</span>
                     </h5>
@@ -481,7 +481,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Temperature</p>
-                    <h5 class="font-weight-bolder mb-0 " id="temp">
+                    <h5 class="font-weight-bolder mb-0 " id="avg_val_temp">
                       31°C
                       <span class="text-success text-sm font-weight-bolder">+5%</span>
                     </h5>
@@ -506,7 +506,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">humidity</p>
-                    <h5 class="font-weight-bolder mb-0 " id="humidity">
+                    <h5 class="font-weight-bolder mb-0 " id="avg_val_humid">
                       60%
                       <span class="text-success text-sm font-weight-bolder">+5%</span>
                     </h5>
@@ -556,7 +556,7 @@
          
                  <div style="text-align: center;">
                     <!-- <img src="/assets/img/status.png" height="45px;" width="55px;"> -->
-                    <button type="button" class="btn bg-gradient-danger w-50 mt-2 mb-0" id="emer">Emergency Stop</button>
+                    <button type="button" class="btn bg-gradient-danger w-50 mt-2 mb-0" id="emer" onclick="emerfunc()">Emergency Stop</button>
                   
                   </div>
               
@@ -573,50 +573,22 @@
       <div class="col-md-2">
         <div class="card bg-cover text-center" style="background-image: url('assets/img/curved-images/curved1.jpg')">
           <div class="card-body z-index-2 py-3">
-            <h2 class="text-white">Profile 1</h2>
+            <h3 class="text-white">Profile 1</h3>
             <p class="text-white">
               Overall Status :<span> Good</span>
             
             <p class="text-white">
-              PM 2.5 :<span> 255pmm</span>
+              PM 2.5 :<span id="p1_pm25"> 255pmm</span>
             </p>
             <span id="dots"></span><span id="more"> 
             <p class="text-white">
-              PM 10 :<span> 255pmm</span>
+              PM 10 :<span id="p1_pm10"> 255pmm</span>
             </p>
             <p class="text-white">
-              CO2 :<span> 255pmm</span>
+              CO2 :<span id="p1_co2"> 255pmm</span>
             </p>
             <p class="text-white">
-              Gases:<span> 255pmm</span>
-            </p>
-            </span>
-            </p>
-            <a class="text-white"onclick="myFunction()" id="myBtn">
-            Read More</a>
-          </div>
-          <div class="mask bg-gradient-dark border-radius-lg"></div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
-          <div class="card-body z-index-2 py-3">
-            <h2 class="text-white">Profile 2</h2>
-            <p class="text-white">
-              Overall Status :<span> Good</span>
-            
-            <p class="text-white">
-              PM 2.5 :<span> 255pmm</span>
-            </p>
-            <span id="dots"></span><span id="more"> 
-            <p class="text-white">
-              PM 10 :<span> 255pmm</span>
-            </p>
-            <p class="text-white">
-              CO2 :<span> 255pmm</span>
-            </p>
-            <p class="text-white">
-              Gases:<span> 255pmm</span>
+              Gases:<span id="p1_gases"> 255pmm</span>
             </p>
             </span>
             </p>
@@ -629,26 +601,26 @@
       <div class="col-md-2">
         <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
           <div class="card-body z-index-2 py-3">
-            <h2 class="text-white">Profile 3</h2>
+            <h3 class="text-white">Profile 2</h3>
             <p class="text-white">
               Overall Status :<span> Good</span>
             
             <p class="text-white">
-              PM 2.5 :<span> 255pmm</span>
+              PM 2.5 :<span id="p2_pm25"> 255pmm</span>
             </p>
-            <span id="dots"></span><span id="more"> 
+            <span id="dots1"></span><span id="more1"> 
             <p class="text-white">
-              PM 10 :<span> 255pmm</span>
-            </p>
-            <p class="text-white">
-              CO2 :<span> 255pmm</span>
+              PM 10 :<span id="p2_pm10"> 255pmm</span>
             </p>
             <p class="text-white">
-              Gases:<span> 255pmm</span>
+              CO2 :<span id="p2_co2"> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span id="p2_gases"> 255pmm</span>
             </p>
             </span>
             </p>
-            <a class="text-white"onclick="myFunction()" id="myBtn">
+            <a class="text-white"onclick="myFunction1()" id="myBtn1">
             Read More</a>
           </div>
           <div class="mask bg-gradient-primary border-radius-lg"></div>
@@ -657,35 +629,93 @@
       <div class="col-md-2">
         <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
           <div class="card-body z-index-2 py-3">
-            <h2 class="text-white">Profile 4</h2>
+            <h3 class="text-white">Profile 3</h3>
             <p class="text-white">
               Overall Status :<span> Good</span>
             
             <p class="text-white">
-              PM 2.5 :<span> 255pmm</span>
+              PM 2.5 :<span id="p3_pm25"> 255pmm</span>
             </p>
-            <span id="dots"></span><span id="more"> 
+            <span id="dots2"></span><span id="more2"> 
             <p class="text-white">
-              PM 10 :<span> 255pmm</span>
-            </p>
-            <p class="text-white">
-              CO2 :<span> 255pmm</span>
+              PM 10 :<span id="p3_pm10"> 255pmm</span>
             </p>
             <p class="text-white">
-              Gases:<span> 255pmm</span>
+              CO2 :<span id="p3_co2"> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span id="p3_gases"> 255pmm</span>
             </p>
             </span>
             </p>
-            <a class="text-white"onclick="myFunction()" id="myBtn">
+            <a class="text-white"onclick="myFunction2()" id="myBtn2">
             Read More</a>
           </div>
           <div class="mask bg-gradient-primary border-radius-lg"></div>
         </div>
       </div>
       <div class="col-md-2">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
+          <div class="card-body z-index-2 py-3">
+            <h3 class="text-white">Profile 4</h3>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span id="p4_pm25"> 255pmm</span>
+            </p>
+            <span id="dots3"></span><span id="more3"> 
+            <p class="text-white">
+              PM 10 :<span id="p4_pm10"> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span id="p4_co2"> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span id="p4_gases"> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction3()" id="myBtn3">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-primary border-radius-lg"></div>
+        </div>
+      </div>
+      <!-- <div class="col-md-2">
         <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
           <div class="card-body z-index-2 py-3">
             <h2 class="text-white">Profile 5</h2>
+            <p class="text-white">
+              Overall Status :<span> Good</span>
+            
+            <p class="text-white">
+              PM 2.5 :<span> 255pmm</span>
+            </p>
+            <span id="dots"></span><span id="more"> 
+            <p class="text-white">
+              PM 10 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              CO2 :<span> 255pmm</span>
+            </p>
+            <p class="text-white">
+              Gases:<span> 255pmm</span>
+            </p>
+            </span>
+            </p>
+            <a class="text-white"onclick="myFunction()" id="myBtn">
+            Read More</a>
+          </div>
+          <div class="mask bg-gradient-primary border-radius-lg"></div>
+        </div>
+      </div> -->
+
+
+      <div class="col-md-2" id="newcard">
+        <div class="card bg-cover text-center" style="background-image: url('assets/img/darken_bg.png')">
+          <div class="card-body z-index-2 py-3">
+            <h3 class="text-white">Profile 6</h3>
             <p class="text-white">
               Overall Status :<span> Good</span>
             
@@ -722,8 +752,25 @@
           </div>
         </a>
       </div> -->
-      
+      <!-- <div class="cardContainer"> -->
+        <!-- Temporary heading -->
+        <!-- <h4>General</h4> -->
+    
+        <!-- Create card here -->
+        <!-- <div id="createCard"></div> -->
+    
+        <!-- Create text-area and 'Add a Card' and close 'X' buttons here -->
+        <!-- <div id="inputField"></div> -->
+    
+        <!--AddCardLink - when clicked it adds an input field, and the buttons for adding a card and closing the input field. -->
+        <!-- <a id="addCardLink" href="#" onclick="displayInputField(); hideButton('addCardLink');"><i class="fas fa-plus"></i> Add a Card</a> -->
+    
+        <!--AddAnotherCardLink - when clicked should perform the same as AddCardLink except that it is hidden at first and is shown only when the close button is clicked. -->
+        <!-- <a id="addAnotherCardLink" href="#" onclick="displayInputField(); hideButton('addAnotherCardLink');"><i class="fas fa-plus"></i> Add another Card</a>
+    
+      </div> -->
     </div>
+    
     
   </section>
 
@@ -1252,6 +1299,36 @@
           </div>
         </div>
       </div> -->
+
+      <section>
+        <!-- <div class="container2"> -->
+          <!-- <div class="card2 bg-warning"> -->
+            <!-- put item.userId & item.id below this -->
+            <!-- <div class="card-header2"></div> -->
+        
+            <!-- <div class="card-body2"> -->
+              <!-- put item.title below this -->
+              <!-- <h5 class="card-title2"></h5> -->
+              <!-- put item.body below this -->
+              <!-- <p class="card-text2"></p>
+            </div>
+          </div> -->
+        
+        <!-- <div class="col-md-2">
+          <div class="card2 bg-cover text-center">
+            <div class="card-header2"></div>
+            <div class="card-body2 z-index-2 py-3">
+              <h2 class="text-black card-title2">Profile 1</h2>
+              <p class="text-white" class="card-text2"> -->
+              <!-- </p> -->
+              <!-- <a class="text-white"onclick="myFunction()" id="myBtn">
+              Read More</a> -->
+            <!-- </div>
+            <div class="mask bg-gradient-dark border-radius-lg"></div>
+          </div>
+        </div>
+      </div> -->
+      </section>
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -1354,6 +1431,7 @@
   </div>
  <!-- </div> -->
   <!--   Core JS Files   -->
+  <!-- <script data-main="../assets/js/main" src="../assets/js/require.js"></script> -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -1386,7 +1464,7 @@
     new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ["Room 1", "Room2", "Room3", "Room4", "Room5"],
+        labels: ["Room 1", "Room2", "Room3", "Room4"],
         datasets: [{
           label: "Sales",
           tension: 0.4,
@@ -1394,7 +1472,7 @@
           borderRadius: 4,
           borderSkipped: false,
           backgroundColor: "#fff",
-          data: [150, 170, 155, 140, 170],
+          data: [150, 170, 155, 140],
           maxBarThickness: 6
         }, ],
       },
@@ -1450,6 +1528,54 @@
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");
     var btnText = document.getElementById("myBtn");
+    
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+    }
+
+    function myFunction1() {
+    var dots = document.getElementById("dots1");
+    var moreText = document.getElementById("more1");
+    var btnText = document.getElementById("myBtn1");
+    
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+    }
+
+    function myFunction2() {
+    var dots = document.getElementById("dots2");
+    var moreText = document.getElementById("more2");
+    var btnText = document.getElementById("myBtn2");
+    
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+    }
+
+    function myFunction3() {
+    var dots = document.getElementById("dots3");
+    var moreText = document.getElementById("more3");
+    var btnText = document.getElementById("myBtn3");
     
     if (dots.style.display === "none") {
       dots.style.display = "inline";
@@ -1574,6 +1700,30 @@
   <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
     <script>
+      var air_quality2=0;
+        var air_quality3=0;
+        var air_quality2_p2=0;
+        var air_quality3_p2=0;
+        var air_quality2_p3=0;
+        var air_quality3_p3=0;
+        var air_quality2_p4=0;
+        var air_quality3_p4=0;
+        var co2=0;
+        var co2_p2=0;
+        var co2_p3=0;
+        var co2_p4=0;
+        var humidity=0;
+        var humidity_p2=0;
+        var humidity_p3=0;
+        var humidity_p4=0;
+        var pm=0;
+        var pm_p2=0;
+        var pm_p3=0;
+        var pm_p4=0;
+        var temperature=0;
+        var temperature_p2=0;
+        var temperature_p3=0;
+        var temperature_p4=0;
         const firebaseConfig = {
             apiKey: "AIzaSyAYMYN7Wztkt0ge2enccv3ttxT6zT8dZw0",
             authDomain: "air-purifer.firebaseapp.com",
@@ -1585,29 +1735,35 @@
             measurementId: "G-H41XLYJE05"
         }
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.database().ref();
+        const db = firebase.database().ref("001A");
+        const db1 = firebase.database().ref("001B");
+        const db2 = firebase.database().ref("001C");
+        const db3 = firebase.database().ref("001D");
+        
+
+
 
         function getAllDataOnce() {
             db.on("value", function(snapshot) {
-                console.log("Data", snapshot.val());
+                console.log("Data1", snapshot.val());
                 
                 var air_quality1 = snapshot.val().PM_1;
-                var air_quality2= snapshot.val().PM_25;
+                air_quality2= snapshot.val().PM_25;
                 var air_quality3 = snapshot.val().PM_10;
                 var co2 = snapshot.val().CO2;
                 var gas_val = snapshot.val().Gas_Value;
                 var emer = snapshot.val().emer;
-                console.log("emer-------",emer)
+                // console.log("emer-------",emer)
                 // var pressure = snapshot.val().Pressure;
                 // var rain = snapshot.val().Rain_Value;
                 // var smoke = snapshot.val().Smoke;
                 // var temp = snapshot.val().Temperature;
                 
                 // document.getElementById('air').innerHTML = air_quality1+ " PPM";
-                document.getElementById('pm25').innerHTML = air_quality2+ " PPM";
-                document.getElementById('pm10').innerHTML = air_quality3+ " PPM";
-                document.getElementById('co2').innerHTML = co2+ " PPM";
-                document.getElementById('gas_val').innerHTML = gas_val;
+                document.getElementById('p1_pm25').innerHTML = air_quality2+ " PPM";
+                document.getElementById('p1_pm10').innerHTML = air_quality3+ " PPM";
+                document.getElementById('p1_co2').innerHTML = co2+ " PPM";
+                document.getElementById('p1_gases').innerHTML = gas_val;
                 // document.getElementById('humidity').innerHTML = humidity+ " %";
                 // document.getElementById('ldr').innerHTML = ldr+ " LX";
                 // document.getElementById('lpg').innerHTML = lpg+ " PPM";
@@ -1615,17 +1771,226 @@
                 // document.getElementById('rain').innerHTML = rain+ " MM";
                 // document.getElementById('smoke').innerHTML = smoke+ " PPM";
                 // document.getElementById('temp').innerHTML = temp+ " °C";
-                document.getElementById("emer").onclick = emerfunc(emer);
+                // document.getElementById("emer").onclick = emerfunc(emer);
+                
                 
                 
 
             })
+            // db1.on("value", function(snapshot) {
+            //     console.log("Data2", snapshot.val());
+                
+            //     var air_quality1_p2 = snapshot.val().PM_1;
+            //     var air_quality2_p2= snapshot.val().PM_25;
+            //     var air_quality3_p2 = snapshot.val().PM_10;
+            //     var co2_p2 = snapshot.val().CO2;
+            //     var gas_val_p2 = snapshot.val().Gas_Value;
+            //     var emer_p2 = snapshot.val().emer;
+            //     console.log("emer-------",emer)
+             
+            //     document.getElementById('p2_pm25').innerHTML = air_quality2_p2+ " PPM";
+            //     document.getElementById('p2_pm10').innerHTML = air_quality3_p2+ " PPM";
+            //     document.getElementById('p2_co2').innerHTML = co2_p2+ " PPM";
+            //     document.getElementById('p2_gases').innerHTML = gas_val_p2;
+               
+
+            // })
+            // db2.on("value", function(snapshot) {
+            //     console.log("Data3", snapshot.val());
+                
+            //     var air_quality1_p3 = snapshot.val().PM_1;
+            //     var air_quality2_p3= snapshot.val().PM_25;
+            //     var air_quality3_p3 = snapshot.val().PM_10;
+            //     var co2_p3 = snapshot.val().CO2;
+            //     var gas_val_p3 = snapshot.val().Gas_Value;
+            //     var emer_p3 = snapshot.val().emer;
+            //     console.log("emer-------",emer)
+                
+            //     document.getElementById('p3_pm25').innerHTML = air_quality2_p3+ " PPM";
+            //     document.getElementById('p3_pm10').innerHTML = air_quality3_p3+ " PPM";
+            //     document.getElementById('p3_co2').innerHTML = co2_p3+ " PPM";
+            //     document.getElementById('p3_gases').innerHTML = gas_val_p3;
+               
+                
+                
+           
+            // })
+            // db3.on("value", function(snapshot) {
+            //     console.log("Data4", snapshot.val());
+                
+            //     var air_quality1_p4 = snapshot.val().PM_1;
+            //     var air_quality2_p4= snapshot.val().PM_25;
+            //     var air_quality3_p4 = snapshot.val().PM_10;
+            //     var co2_p4 = snapshot.val().CO2;
+            //     var gas_val_p4 = snapshot.val().Gas_Value;
+            //     var emer_p4 = snapshot.val().emer;
+            //     console.log("emer-------",emer)
+                
+            //     document.getElementById('p4_pm25').innerHTML = air_quality2_p4+ " PPM";
+            //     document.getElementById('p4_pm10').innerHTML = air_quality3_p4+ " PPM";
+            //     document.getElementById('p4_co2').innerHTML = co2_p4+ " PPM";
+            //     document.getElementById('p4_gases').innerHTML = gas_val_p4;
+                
+                
+               
+
+            // })
+            // var data = {"data":[air_quality1,air_quality1_p2,air_quality1_p3,air_quality1_p4]}
+            // const FileSystem = require("fs");
+            // FileSystem.writeFile('file.json', JSON.stringify(data), (error) => {
+            //     if (error) throw error;
+            //   });
+            
+            
 
         }
-        function emerfunc(emer) {
+        function getAllDataOnce1() {
+            db1.on("value", function(snapshot) {
+                console.log("Data2", snapshot.val());
+                
+                var air_quality1_p2 = snapshot.val().PM_1;
+                air_quality2_p2= snapshot.val().PM_25;
+                var air_quality3_p2 = snapshot.val().PM_10;
+                var co2_p2 = snapshot.val().CO2;
+                var gas_val_p2 = snapshot.val().Gas_Value;
+                var emer_p2 = snapshot.val().emer;
+                // console.log("emer-------",emer)
+                // var pressure = snapshot.val().Pressure;
+                // var rain = snapshot.val().Rain_Value;
+                // var smoke = snapshot.val().Smoke;
+                // var temp = snapshot.val().Temperature;
+                
+                // document.getElementById('air').innerHTML = air_quality1+ " PPM";
+                document.getElementById('p2_pm25').innerHTML = air_quality2_p2+ " PPM";
+                document.getElementById('p2_pm10').innerHTML = air_quality3_p2+ " PPM";
+                document.getElementById('p2_co2').innerHTML = co2_p2+ " PPM";
+                document.getElementById('p2_gases').innerHTML = gas_val_p2;
+                // document.getElementById('humidity').innerHTML = humidity+ " %";
+                // document.getElementById('ldr').innerHTML = ldr+ " LX";
+                // document.getElementById('lpg').innerHTML = lpg+ " PPM";
+                // document.getElementById('pressure').innerHTML = pressure+ " PA";
+                // document.getElementById('rain').innerHTML = rain+ " MM";
+                // document.getElementById('smoke').innerHTML = smoke+ " PPM";
+                // document.getElementById('temp').innerHTML = temp+ " °C";
+                // document.getElementById("emer").onclick = emerfunc(emer);
+                
+                // console.log(air_quality2,air_quality2_p2,air_quality2_p3,air_quality2_p4);
+
+            })
+
+        }
+        function getAllDataOnce2() {
+            db2.on("value", function(snapshot) {
+                console.log("Data3", snapshot.val());
+                
+                var air_quality1_p3 = snapshot.val().PM_1;
+                air_quality2_p3= snapshot.val().PM_25;
+                var air_quality3_p3 = snapshot.val().PM_10;
+                var co2_p3 = snapshot.val().CO2;
+                var gas_val_p3 = snapshot.val().Gas_Value;
+                var emer_p3 = snapshot.val().emer;
+                // console.log("emer-------",emer)
+                // var pressure = snapshot.val().Pressure;
+                // var rain = snapshot.val().Rain_Value;
+                // var smoke = snapshot.val().Smoke;
+                // var temp = snapshot.val().Temperature;
+                
+                // document.getElementById('air').innerHTML = air_quality1+ " PPM";
+                document.getElementById('p3_pm25').innerHTML = air_quality2_p3+ " PPM";
+                document.getElementById('p3_pm10').innerHTML = air_quality3_p3+ " PPM";
+                document.getElementById('p3_co2').innerHTML = co2_p3+ " PPM";
+                document.getElementById('p3_gases').innerHTML = gas_val_p3;
+                // document.getElementById('humidity').innerHTML = humidity+ " %";
+                // document.getElementById('ldr').innerHTML = ldr+ " LX";
+                // document.getElementById('lpg').innerHTML = lpg+ " PPM";
+                // document.getElementById('pressure').innerHTML = pressure+ " PA";
+                // document.getElementById('rain').innerHTML = rain+ " MM";
+                // document.getElementById('smoke').innerHTML = smoke+ " PPM";
+                // document.getElementById('temp').innerHTML = temp+ " °C";
+                // document.getElementById("emer").onclick = emerfunc(emer);
+                // console.log(air_quality2,air_quality2_p2,air_quality2_p3,air_quality2_p4);
+                
+              
+            })
+
+        }
+        function getAllDataOnce3() {
+            db3.on("value", function(snapshot) {
+                console.log("Data4", snapshot.val());
+                
+                var air_quality1_p4 = snapshot.val().PM_1;
+                air_quality2_p4= snapshot.val().PM_25;
+                var air_quality3_p4 = snapshot.val().PM_10;
+                var co2_p4 = snapshot.val().CO2;
+                var gas_val_p4 = snapshot.val().Gas_Value;
+                var emer_p4 = snapshot.val().emer;
+                // console.log("emer-------",emer)
+                // var pressure = snapshot.val().Pressure;
+                // var rain = snapshot.val().Rain_Value;
+                // var smoke = snapshot.val().Smoke;
+                // var temp = snapshot.val().Temperature;
+                
+                // document.getElementById('air').innerHTML = air_quality1+ " PPM";
+                document.getElementById('p4_pm25').innerHTML = air_quality2_p4+ " PPM";
+                document.getElementById('p4_pm10').innerHTML = air_quality3_p4+ " PPM";
+                document.getElementById('p4_co2').innerHTML = co2_p4+ " PPM";
+                document.getElementById('p4_gases').innerHTML = gas_val_p4;
+                // document.getElementById('humidity').innerHTML = humidity+ " %";
+                // document.getElementById('ldr').innerHTML = ldr+ " LX";
+                // document.getElementById('lpg').innerHTML = lpg+ " PPM";
+                // document.getElementById('pressure').innerHTML = pressure+ " PA";
+                // document.getElementById('rain').innerHTML = rain+ " MM";
+                // document.getElementById('smoke').innerHTML = smoke+ " PPM";
+                // document.getElementById('temp').innerHTML = temp+ " °C";
+                // document.getElementById("emer").onclick = emerfunc(emer);
+                // var proj = {
+                //         data:[air_quality2_p4]
+                //         };
+                //         require('fs').writeFile('Data.json', JSON.stringify(proj), (error) => {
+                //         if (error) {
+                //             throw error;
+                //         }
+                //         console.log('Data saved!');
+                //     }); 
+                console.log(air_quality2,air_quality2_p2,air_quality2_p3,air_quality2_p4);
+                avg_pm25 = (air_quality2_p2+air_quality2_p3+air_quality2_p4)/3;      
+                document.getElementById('avg_val_pm25').innerHTML = Math.round(avg_pm25)+ " PPM";
+
+            })
+
+        }
+        // function avg_val(avg_val_pm25,avg_val_pm10,avg_val_co2,avg_val_gas) {
+            // var avg_val = (air_quality2 + air_quality2_p2 + air_quality2_p3 + air_quality2_p4)/4;
+            // var avg_val_pm10 = (air_quality3 + air_quality3_p2 + air_quality3_p3 + air_quality3_p4)/4;
+            // var avg_val_co2 = (co2 + co2_p2 + co2_p3 + co2_p4)/4;
+            // var avg_val_gas = (gas_val + gas_val_p2 + gas_val_p3 + gas_val_p4)/4;
+            // document.getElementById('avg_val_pm25').innerHTML = avg_val_pm25+ " PPM";
+            // document.getElementById('avg_val_pm10').innerHTML = avg_val_pm10+ " PPM";
+            // document.getElementById('avg_val_co2').innerHTML = avg_val_co2+ " PPM";
+            // document.getElementById('avg_val_gas').innerHTML = avg_val_gas+ " PPM";
+            // console.log("avg_values",avg_val,avg_val_pm10,avg_val_co2,avg_val_gas);
+        // }
+        // avg_val_pm25=air_quality2+air_quality2_p2+air_quality2_p3+air_quality2_p4/4;
+        // avg_val_pm10=air_quality3+air_quality3_p2+air_quality3_p3+air_quality3_p4/4;
+        // avg_val_co2=co2+co2_p2+co2_p3+co2_p4/4;
+        // avg_val_gas=gas_val+gas_val_p2+gas_val_p3+gas_val_p4/4;
+        // avg_val(avg_val_pm25,avg_val_pm10,avg_val_co2,avg_val_gas);
+        function emerfunc() {
         // var Emergency = document.getElementById("emer");
         // if (emer=="0"){
-          firebase.database().ref().child("emer").set("1");
+          currentvalue = document.getElementById('emer').innerHTML;
+          if (currentvalue =="Emergency Stop"){
+          document.getElementById('emer').className = "btn bg-gradient-success w-50 mt-2 mb-0";
+          document.getElementById('emer').innerHTML = "Start All";
+          firebase.database().ref().child("emer").set(0);
+          }
+          else{
+            document.getElementById('emer').className = "btn bg-gradient-danger w-50 mt-2 mb-0";
+            document.getElementById('emer').innerHTML = "Emergency Stop";
+            firebase.database().ref().child("emer").set(1);
+          }
+              
+          
         // }
         // else{
           // firebase.database().ref().child("emer").set("0");
@@ -1635,6 +2000,13 @@
         // }
         }
         getAllDataOnce();
+        getAllDataOnce1();
+        getAllDataOnce2();
+        getAllDataOnce3();
+        console.log(air_quality2,air_quality2_p2,air_quality2_p3,air_quality2_p4);
+        
+       
+            
         
     </script>
   <script>
@@ -1650,6 +2022,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>

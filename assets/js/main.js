@@ -1,141 +1,98 @@
-window.requestAnimFrame = (function(callback) {
-  return window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.oRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    function(callback) {
-      window.setTimeout(callback, 1000 / 60);
-    };
-})();
-
-// output is in the range of [0, 1]
-// t is the elapsed time and d is the duration
-Math.linearInOut = function(t, d) {
-  if (t > d / 2) {
-    return 2 - (t / (d / 2));
-  } else {
-    return t / (d / 2);
+// *************** ADD - DELETE - EDIT CARDS  **************
+var createCardElem = document.getElementById("newcard");
+  createCardElem.style.display = "none";
+/*** Creates an inputField which contains a textarea, a 'Add a Card' button and a delete 'X' button.***/
+function displayInputField() {
+  //checks to see if there is a div#inputField in our DOM (null means we do not have div#inputField), and creates it if its not there
+  var a = document.getElementById("inputField");
+  var inputFieldExist = true;
+  if (a === null) {
+    a = document.createElement("inputField");
+    a.id = "inputField";
+    // adds the newly created element to the DOM
+    inputFieldExist = false;
   }
+
+  // Creates a textarea for input
+  var b = document.createElement("textarea");
+  b.setAttribute("type", "text");
+  b.setAttribute("id", "userInput");
+  b.setAttribute("overflow", "break-word");
+  b.setAttribute("placeholder", "Enter a title for this card...");
+  a.appendChild(b);
+
+  // Creates a "Add a Card" button. It adds the textarea when clicked
+  var button = document.createElement("button");
+  button.innerHTML = "Add Card";
+  button.setAttribute("id", "createNewCard");
+  a.appendChild(button);
+
+  //Call the CreateCard() function to create a new card when the 'Add a Card' button is clicked.
+  button.addEventListener("click", function() {
+    createACard();
+  });
+
+  // Creates a delete "x" button and set attributes to it
+  var closeButton = document.createElement("closeButton");
+  closeButton.innerHTML = '<i class="fas fa-times"></i>';
+  closeButton.setAttribute("id", "createNewCloseBtn");
+  a.appendChild(closeButton);
+
+  //Checks to see if a div#inputField exists and creates one if it does not exist and appends it to its parentNode
+  if (!inputFieldExist) {
+    document.querySelector("div.cardContainer").appendChild(a);
+  }
+  // adds an event listener which will call the removeCard () function to delete the div#inputField when clicked
+  closeButton.addEventListener("click", function() {
+    removeCard();
+  });
 }
 
-window.onload = function() {
-  DoCanvasEffect('canvas');
+//Hides the 'Add a Card' and 'Add another card' links when they are clicked.
+function hideButton(x) {
+  document.getElementById(x).style.display = "none"; // hide the button
 }
 
-function DoCanvasEffect(canvas_id) {
-  // scene options:
-  var follow = true;
-  var follow_opacity = true;
-  var speed = .20;
-
-  var canvas = document.getElementById(canvas_id);
-  var dt = 16.667;
-
-  //Make the canvas occupy the full page
-  var W = window.innerWidth,
-    H = window.innerHeight;
-  canvas.width = W;
-  canvas.height = H;
-  var ctx = canvas.getContext("2d");
-
-  var particles = [];
-  var mouse = {};
-
-  // track mouse
-  canvas.addEventListener('mousemove', function(e) {
-    mouse.x = e.pageX;
-    mouse.y = e.pageY;
-  }, false);
-
-  // create particles
-  var total = 50;
-  for (var i = 0; i < total; i++) {
-    particles.push(new particle(true));
-  }
-
-  function particle(dead) {
-    var a = Math.PI * 2 * Math.random();
-    this.speed = {
-      x: Math.cos(a) * 6 * speed,
-      y: Math.sin(a) * 6 * speed
-    };
-
-    // location = mouse coordinates
-    // Now the flame follows the mouse coordinates
-    if (mouse.x && mouse.y && follow) {
-      this.location = {
-        x: mouse.x + -150 + Math.random() * 300,
-        y: mouse.y + -150 + Math.random() * 300
-      };
-    } else {
-      this.location = {
-        x: W / 2,
-        y: H / 2
-      };
-    }
-
-    // radius range = 10-30
-    this.radius = 2 + Math.random() * 58;
-    if (dead) this.radius = 0;
-
-    // life range = 1500-5000ms
-    this.time = 1500 + Math.random() * 3500;
-    this.duration = this.time;
-
-    // color
-    this.r = Math.round(Math.random() * 50);
-    this.b = 150 + Math.round(Math.random() * 105);
-    this.g = 0; //Math.round(Math.random()*255);
-  }
-
-  function draw() {
-    if ((!mouse.x || !mouse.y) && follow_opacity) {
-      window.requestAnimFrame(draw);
-      return;
-    }
-
-    // clear the canvas with an image:
-    ctx.clearRect(0, 0, W, H);
-
-    // draw particles:
-    for (var i = 0; i < particles.length; i++) {
-      var p = particles[i];
-      ctx.beginPath();
-      var x = p.location.x,
-        y = p.location.y;
-      var o = Math.linearInOut(p.time, p.duration) * 0.50;
-      if (follow_opacity) {
-        var dx = mouse.x - x;
-        var dy = mouse.y - y;
-        var dist = (Math.sqrt(dx * dx + dy * dy) || 200);
-        o *= 1 - (dist / 200);
-      }
-      p.opacity = o != NaN ? o : p.opacity;
-
-      var gradient = ctx.createRadialGradient(x, y, 0, x, y, p.radius);
-      gradient.addColorStop(0, "rgba(" + p.r + ", " + p.g + ", " + p.b + ", " + p.opacity + ")");
-      gradient.addColorStop(0.8, "rgba(" + p.r + ", " + p.g + ", " + p.b + ", " + p.opacity + ")");
-      gradient.addColorStop(1, "rgba(" + p.r + ", " + p.g + ", " + p.b + ", 0)");
-      ctx.fillStyle = gradient;
-      ctx.arc(p.location.x, p.location.y, p.radius, 0, Math.PI * 2, false);
-      ctx.fill();
-      ctx.closePath();
-
-      // some basic physics to move and animate the particles
-      p.time -= dt;
-      p.radius -= 0.25;
-      p.location.x += p.speed.x;
-      p.location.y += p.speed.y;
-
-      // check if the particle has finished:
-      if (p.radius < 0 || p.time < 0) {
-        particles[i] = new particle(); // reset it
-      }
-    }
-
-    window.requestAnimFrame(draw);
-  }
-
-  window.requestAnimFrame(draw);
+//Takes the input from div#inputField and creates a new 'titled' card
+function createACard() {
+  var createCardElem = document.getElementById("newcard");
+  createCardElem.style.display = "block";
+  // var createNewCard = document.createElement("div");
+  // createNewCard.setAttribute("id", "newCard");
+  // createCardElem.appendChild(createNewCard);
+  // var inputTaker = document.getElementById("userInput").value;
+  // //appending the user's input to the new card
+  // createNewCard.innerHTML = inputTaker;
+  document.getElementById("userInput").value = ""; //empties the text-area after 'Add a Card' button is clicked.
 }
+
+//removes the inputField and buttons from the document and shows the 'addAnotherCardLink' after it has been clicked.
+function removeCard(inputField) {
+  var element = document.getElementById("inputField");
+  element.parentNode.removeChild(element);
+  document.getElementById("addAnotherCardLink").style.display = "block";
+}
+
+
+$(function() {
+  //hide first div or remove after append using `$(".card:first").remove()`
+  $(".card2:first").hide()
+  $.ajax({
+    url: "config.json",
+    success: function(result) {
+      $.each(result, function(index, item) {
+        var cards = $(".card2:first").clone() //clone first divs
+        var userId = item.userId;
+        var typeId = item.id;
+        var titleId = item.title;
+        var bodyId = item.body;
+        //add values inside divs
+        $(cards).find(".card-header2").html("user id: " + userId + " - " + "id: " + typeId);
+        $(cards).find(".card-title2").html(titleId);
+        $(cards).find(".card-text2").html(bodyId);
+        $(cards).show() //show cards
+        $(cards).appendTo($(".container2")) //append to container
+      });
+    }
+  });
+});
